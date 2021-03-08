@@ -1,0 +1,12 @@
+dependencies: 
+    Ling: 
+        - BabyYaml
+        - Bat
+        - Kit
+        - Light
+        - Light_Database
+        - SimplePdoWrapper
+    
+
+post_install: 
+    map: true
