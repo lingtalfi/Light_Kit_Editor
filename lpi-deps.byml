@@ -5,3 +5,11 @@
     - Ling:Light:0.69.30+
     - Ling:Light_Database:1.14.15+
     - Ling:SimplePdoWrapper:1.30.17+
+
+0.1.1: 
+    - Ling:BabyYaml:1.7.8+
+    - Ling:Bat:1.308+
+    - Ling:Kit:1.12.6+
+    - Ling:Light:0.69.32+
+    - Ling:Light_Database:1.14.15+
+    - Ling:SimplePdoWrapper:1.30.17+

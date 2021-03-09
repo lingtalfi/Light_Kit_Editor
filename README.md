@@ -68,6 +68,10 @@ kit_editor:
 History Log
 =============
 
+- 0.1.1 -- 2021-03-09
+
+    - update planet to adapt Ling.Light_Kit_Admin:0.12.25
+  
 - 0.1.0 -- 2021-03-08
 
     - initial commit

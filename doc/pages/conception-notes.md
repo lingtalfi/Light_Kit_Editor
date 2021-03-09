@@ -141,7 +141,7 @@ zones:
             name: zeroadmin_herograph
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ZeroAdminHeroGraphWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeroGraphWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeroGraphWidget
             template: default.php
             _descr: <
                 ZeroAdminHeroGraphWidget is a bootstrap 4 widget to display a line graph. See the dashboard of the zeroadmin theme (https://www.templatemonster.com/admin-templates/zero-admin-template-82792.html)
@@ -159,7 +159,7 @@ It refers to a template (referenced with the **_parent** key), and the template 
 
 
 ```yaml
-layout: templates/Light_Kit_Admin/layouts/zeroadmin/zeroadmin_main_layout.php
+layout: templates/Ling.Light_Kit_Admin/layouts/zeroadmin/zeroadmin_main_layout.php
 zones:
 
     header:
@@ -167,7 +167,7 @@ zones:
             name: zeroadmin_header
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ZeroAdminHeaderWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeaderWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeaderWidget
             identifier: maurice
             template: default.php
 
@@ -176,7 +176,7 @@ zones:
             name: zeroadmin_breadcrumb
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ZeroAdminBreadcrumbWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminBreadcrumbWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminBreadcrumbWidget
             template: default.php
             vars:
                 first_element_text: Home
@@ -205,7 +205,7 @@ zones:
             type: picasso
             active: true
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\FooterWithButtonWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/FooterWithButtonWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/FooterWithButtonWidget
             template: default.php
             vars:
                 attr:
@@ -219,7 +219,7 @@ zones:
 ```
 
 
-So here the layout file (i.e. **templates/Light_Kit_Admin/layouts/zeroadmin/zeroadmin_main_layout.php**) is defined in the parent,
+So here the layout file (i.e. **templates/Ling.Light_Kit_Admin/layouts/zeroadmin/zeroadmin_main_layout.php**) is defined in the parent,
 which is not optimal, because you have to open the parent to know the layout (i.e. wasted time).
 
 In this case, the "body" widgets of the page file are merged with the "body" widgets of the parent file.
@@ -250,7 +250,7 @@ zones:
             name: zeroadmin_herograph
             type: picasso
             className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ZeroAdminHeroGraphWidget
-            widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeroGraphWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeroGraphWidget
             template: default.php
             _descr: <
                 ZeroAdminHeroGraphWidget is a bootstrap 4 widget to display a line graph. See the dashboard of the zeroadmin theme (https://www.templatemonster.com/admin-templates/zero-admin-template-82792.html)
@@ -282,7 +282,7 @@ For instance the **main_header** alias refers to a **zone file**, which zone id 
     name: zeroadmin_header
     type: picasso
     className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ZeroAdminHeaderWidget
-    widgetDir: templates/Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeaderWidget
+    widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminHeaderWidget
     identifier: maurice
     template: default.php
 ```
