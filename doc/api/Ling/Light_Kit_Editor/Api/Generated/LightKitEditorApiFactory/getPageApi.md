@@ -46,7 +46,7 @@ Returns [CustomPageApiInterface](https://github.com/lingtalfi/Light_Kit_Editor/b
 
 Source Code
 ===========
-See the source code for method [LightKitEditorApiFactory::getPageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L96-L102)
+See the source code for method [LightKitEditorApiFactory::getPageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L83-L89)
 
 
 See Also
@@ -54,5 +54,5 @@ See Also
 
 The [LightKitEditorApiFactory](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/LightKitEditorApiFactory.md) class.
 
-Previous method: [getZoneHasWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/LightKitEditorApiFactory/getZoneHasWidgetApi.md)<br>Next method: [getPageHasZoneApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/LightKitEditorApiFactory/getPageHasZoneApi.md)<br>
+Previous method: [getBlockApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/LightKitEditorApiFactory/getBlockApi.md)<br>Next method: [getBlockHasWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/LightKitEditorApiFactory/getBlockHasWidgetApi.md)<br>
 

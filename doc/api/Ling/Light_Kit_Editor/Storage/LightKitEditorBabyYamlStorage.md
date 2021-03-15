@@ -4,7 +4,7 @@
 
 The LightKitEditorBabyYamlStorage class
 ================
-2021-03-01 --> 2021-03-09
+2021-03-01 --> 2021-03-15
 
 
 
@@ -34,7 +34,7 @@ class <span class="pl-k">LightKitEditorBabyYamlStorage</span> extends [LightKitE
     - public [getPageConf](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/getPageConf.md)(string $pageName) : array | false
     - private [noEscalation](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/noEscalation.md)(string $string) : string
     - private [resolveZoneAlias](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/resolveZoneAlias.md)(string $str) : array | false
-    - private [getWidgetsByZone](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/getWidgetsByZone.md)(string $zoneId) : array
+    - private [getWidgetsByBlock](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/getWidgetsByBlock.md)(string $blockId) : array
 
 - Inherited methods
     - public [LightKitEditorAbstractStorage::setContainer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/setContainer.md)([Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) $container) : void
@@ -67,7 +67,7 @@ Methods
 - [LightKitEditorBabyYamlStorage::getPageConf](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/getPageConf.md) &ndash; Returns the [kit page conf array](https://github.com/lingtalfi/Kit#the-kit-configuration-array) for the given $pageName, or false if a problem occurs.
 - [LightKitEditorBabyYamlStorage::noEscalation](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/noEscalation.md) &ndash; Returns a path with any double dots stripped out.
 - [LightKitEditorBabyYamlStorage::resolveZoneAlias](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/resolveZoneAlias.md) &ndash; Returns the widgets referenced by the given zone alias, or false if the given string is not a zone alias.
-- [LightKitEditorBabyYamlStorage::getWidgetsByZone](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/getWidgetsByZone.md) &ndash; Returns the widgets array for the given zone id.
+- [LightKitEditorBabyYamlStorage::getWidgetsByBlock](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/getWidgetsByBlock.md) &ndash; Returns the widgets array for the given zone id.
 - [LightKitEditorAbstractStorage::setContainer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/setContainer.md) &ndash; Sets the light service container interface.
 - [LightKitEditorAbstractStorage::getErrors](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/getErrors.md) &ndash; Returns the errors that can occur during the execution of certain methods.
 - [LightKitEditorAbstractStorage::getContainer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/getContainer.md) &ndash; Returns the container of this instance.

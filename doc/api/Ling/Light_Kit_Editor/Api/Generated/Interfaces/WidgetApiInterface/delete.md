@@ -56,7 +56,7 @@ Returns false | int.
 
 Source Code
 ===========
-See the source code for method [WidgetApiInterface::delete](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/Interfaces/WidgetApiInterface.php#L232-L232)
+See the source code for method [WidgetApiInterface::delete](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/Interfaces/WidgetApiInterface.php#L321-L321)
 
 
 See Also

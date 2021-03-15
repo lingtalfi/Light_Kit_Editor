@@ -4,7 +4,7 @@
 
 The CustomLightKitEditorBaseApi class
 ================
-2021-03-01 --> 2021-03-09
+2021-03-01 --> 2021-03-15
 
 
 
@@ -63,4 +63,4 @@ See the source code of [Ling\Light_Kit_Editor\Api\Custom\Classes\CustomLightKitE
 
 SeeAlso
 ==============
-Next class: [CustomPageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Classes/CustomPageApi.md)<br>
+Previous class: [CustomBlockHasWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Classes/CustomBlockHasWidgetApi.md)<br>Next class: [CustomPageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Classes/CustomPageApi.md)<br>

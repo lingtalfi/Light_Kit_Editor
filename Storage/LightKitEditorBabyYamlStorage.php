@@ -113,22 +113,22 @@ class LightKitEditorBabyYamlStorage extends LightKitEditorAbstractStorage
      */
     private function resolveZoneAlias(string $str): array|false
     {
-        if (true === str_starts_with($str, 'z$:')) {
-            $zoneId = trim(substr($str, 3));
-            return $this->getWidgetsByZone($zoneId);
+        if (true === str_starts_with($str, 'b$:')) {
+            $blockId = trim(substr($str, 3));
+            return $this->getWidgetsByBlock($blockId);
         }
         return false;
     }
 
     /**
      * Returns the widgets array for the given zone id.
-     * @param string $zoneId
+     * @param string $blockId
      * @return array
      */
-    private function getWidgetsByZone(string $zoneId): array
+    private function getWidgetsByBlock(string $blockId): array
     {
         $arr = [];
-        $zoneFile = $this->rootDir . "/zones/$zoneId.byml";
+        $zoneFile = $this->rootDir . "/blocks/$blockId.byml";
         if (true === file_exists($zoneFile)) {
             $arr = BabyYamlUtil::readFile($zoneFile);
         }

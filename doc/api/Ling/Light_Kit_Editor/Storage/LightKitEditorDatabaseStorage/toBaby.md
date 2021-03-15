@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitEditorDatabaseStorage::toBaby](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L169-L175)
+See the source code for method [LightKitEditorDatabaseStorage::toBaby](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L170-L176)
 
 
 See Also

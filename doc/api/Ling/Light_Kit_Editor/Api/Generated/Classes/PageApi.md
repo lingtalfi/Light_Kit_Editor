@@ -4,7 +4,7 @@
 
 The PageApi class
 ================
-2021-03-01 --> 2021-03-09
+2021-03-01 --> 2021-03-15
 
 
 
@@ -107,4 +107,4 @@ See the source code of [Ling\Light_Kit_Editor\Api\Generated\Classes\PageApi](htt
 
 SeeAlso
 ==============
-Previous class: [LightKitEditorBaseApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/LightKitEditorBaseApi.md)<br>Next class: [PageHasZoneApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/PageHasZoneApi.md)<br>
+Previous class: [LightKitEditorBaseApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/LightKitEditorBaseApi.md)<br>Next class: [PageHasBlockApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/PageHasBlockApi.md)<br>

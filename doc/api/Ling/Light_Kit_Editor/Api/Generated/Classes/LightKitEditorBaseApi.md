@@ -4,7 +4,7 @@
 
 The LightKitEditorBaseApi class
 ================
-2021-03-01 --> 2021-03-09
+2021-03-01 --> 2021-03-15
 
 
 
@@ -82,4 +82,4 @@ See the source code of [Ling\Light_Kit_Editor\Api\Generated\Classes\LightKitEdit
 
 SeeAlso
 ==============
-Previous class: [CustomZoneHasWidgetApiInterface](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Interfaces/CustomZoneHasWidgetApiInterface.md)<br>Next class: [PageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/PageApi.md)<br>
+Previous class: [BlockHasWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/BlockHasWidgetApi.md)<br>Next class: [PageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/PageApi.md)<br>

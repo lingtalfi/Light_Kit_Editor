@@ -63,7 +63,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [WidgetApi::getWidgetsColumn](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/Classes/WidgetApi.php#L203-L208)
+See the source code for method [WidgetApi::getWidgetsColumn](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/Classes/WidgetApi.php#L223-L228)
 
 
 See Also

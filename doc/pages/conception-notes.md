@@ -1,17 +1,70 @@
 Light_Kit_Editor, conception notes
 ================
-2021-03-01 -> 2021-03-04
+2021-03-01 -> 2021-03-12
 
-**Light kit editor** (lke)'s purpose is to help users edit their kit pages using a gui.
+**Light kit editor** (lke)'s purpose is to help users edit their [kit](https://github.com/lingtalfi/Kit) pages using a gui.
 
-Lke focuses on the api side, which is the first step towards a fully functional gui.
 
-The actual gui is not handled by lke yet. Maybe it will be one day, but at the moment those are just conception notes,
-nothing is coded, I just have some ideas.
+Basically, we provide some tools and concepts, which third-party authors can use to create their own gui.
 
 
 
-lke provides two interchangeable storages:
+The first thing to understand is that we've expanded the kit system, adding our own twist to it.
+This is the concept of [kit web app](#the-kit-web-app), which basically introduces the idea of **theme** in the **kit system**.
+
+
+
+
+Summary
+------------
+2021-03-12
+
+* [The kit web app](#the-kit-web-app)
+* [The two engines](#the-two-engines)
+  * [babyYaml storage](#babyyaml-storage)
+  * [Page example](#page-example)
+  * [Assigning widgets to page positions with babyYaml](#assigning-widgets-to-page-positions-with-babyyaml)
+    * [Block alias](#block-alias)
+  * [database storage](#database-storage)
+  * [Zone alias conception](#zone-alias-conception)
+  
+
+
+
+The kit web app
+===========
+2021-03-11 -> 2021-03-12
+
+
+In a **kit web app**, we use the same concepts defined in the [kit system](https://github.com/lingtalfi/Kit),
+but we add two new terms:
+
+- theme
+- block: this is our term for: a "group of widget"
+
+The general logic is the following:
+
+- a **page** is called (from a controller)
+- the **page** calls a **layout**, which arranges some **positions** in a html canvas 
+- the **page** also assigns **blocks** to the **positions** (i.e. zones) of the layout
+- then the **layout** is rendered, and as a **position** is called the layout renders all the **widgets** bound to it 
+
+
+So the idea with **blocks** is that we don't assign **widgets** directly to a **zone**, but rather we group widgets in blocks first,
+and then assign the blocks to the **zones**.
+
+
+We also introduce the notion of [theme](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/kit-theme.md), which kit lacked.
+
+
+
+
+The two engines
+==========
+2021-03-11 -> 2021-03-12
+
+
+lke provides two different storages:
 
 - [babyYaml](#babyyaml-storage): a storage based on [babyYaml](https://github.com/lingtalfi/BabyYaml) files
 - [database](#database-storage): a storage using the database
@@ -21,48 +74,161 @@ The main api provides an abstraction for the storage layer, so that the methods 
 
 Which storage you choose is entirely up to you.
 
-Basically, they do the same thing, only a few implementation details change.
-
-The main concepts used by both storages are the one used by [kit](https://github.com/lingtalfi/Kit#the-concepts-used-by-kit)):
-
-
-- **page**
-- **layout**
-- **zone**
-- **widget**
-  
-In addition to that, we add the following concept:
-  
-
-- **zone_alias**: a **zone alias** is used by the developers inside  the babyYaml files of the pages.
-    A **zone alias** is basically a short notation which reference a zone.
-    We chose to use the **zone alias** technique instead of the template inheritance system, as we found it's a bit more 
-    intuitive (i.e. less clumsy).
-    So the idea with **zone aliases** is that in your **page** file you define all the zones explicitly, but then for each zone
-    you can call individual zone "templates" using **zone aliases**.
-  
-    This is explained in more details in the [zone alias](#zone-alias) section.
 
 
 
 
 babyYaml storage
 -----------
-2021-03-02
+2021-03-02 -> 2021-03-12
 
 
-The organization of the babyYaml storage is all contained in a so-called root directory, which is a directory of your choice.
+The organization of the babyYaml storage is all contained in a so-called root directory (aka **kit web app** directory), which is a directory of your choice.
 We will refer to it as **$root** in this section.
 
-We have different types of file:
 
+A typical **kit web app** directory contains the following types of file:
 
+- a layout file: $root/layouts/$layoutId.php
 - a page file: $root/pages/$pageId.byml
-- a zone file: $root/zones/$zoneId.byml
+- a block file: $root/blocks/$blockId.byml
 
 
-The characters allowed for both the **$pageId** and the **$zoneId** are the alphanumerical chars,
+The characters allowed for the **$layoutId**, **$pageId**, and **$blockId** are the alphanumerical chars,
 dash, underscore and the slash (to create sub-directory based organization).
+
+
+Since a **kit web app** is generally the result of multiple plugins working collaboratively, we use the following filesystem structure,
+which is [eco-structure](https://github.com/lingtalfi/Light/blob/master/personal/mydoc/pages/nomenclature.md#eco-structure) friendly:
+
+```txt
+- $web_app_name/
+    - layouts/
+        - $planetDotName/
+            - $theme_name/
+                - layout_46819.php
+                - ...
+            - $another_theme_name/
+                - layout_46819.php
+                - ...
+    - pages/
+        - $planetDotName/
+            - some_page.byml
+            - ...
+    - blocks/
+        - $planetDotName/
+            - some_block.byml
+            - ...
+```
+
+With:
+
+- **$web_app_name**: the name of your **kit web app**
+- **$planetDotName**: the [planet dot name](https://github.com/karayabin/universe-snapshot#the-planet-dot-name) of the contributing plugin
+- **$theme_name**: the name of your [theme](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/kit-theme.md)
+
+
+So for instance in the above example, we have the following mappings:
+
+- **$layoutId**: $planetDotName/$theme_name/layout_46819 
+- **$pageId**: $planetDotName/some_page 
+- **$blockId**: $planetDotName/some_block 
+
+
+
+
+Page example
+----------
+2021-03-11
+
+
+To get started, you can use the following page example (inspired by **config/open/Ling.Light_Kit_Admin/lke/pages/Ling.Light_Kit_Admin/dashboard.byml** from the [Light_Kit_Admin](https://github.com/lingtalfi/Light_Kit_Admin) plugin):
+
+
+
+```yaml
+label: Light Kit Admin Dashboard
+layout: config/open/Ling.Light_Kit_Admin/lke/layouts/$t/main_layout.php
+layout_vars: []
+
+title: Light Kit Admin Dashboard
+description: <
+    Welcome to the light kit admin dashboard.
+>
+
+
+zones:
+    notifications: b$:Ling.Light_Kit_Admin/notifications_default
+    toasts: b$:Ling.Light_Kit_Admin/toasts_default
+    sub_header: b$:Ling.Light_Kit_Admin/sub_header_default
+    header: b$:Ling.Light_Kit_Admin/header_default
+    sidebar: b$:Ling.Light_Kit_Admin/sidebar_default
+    body:
+        - b$:Ling.Light_Kit_Admin/body_default
+        # --------------------------------------
+        # YOUR WIDGET(S) HERE...
+        # --------------------------------------
+        -
+            name: zeroadmin_statsummaryicon
+            type: picasso
+            identifier: w8
+            className: Ling\Light_Kit_BootstrapWidgetLibrary\Widget\Picasso\ZeroAdminStatSummaryIconWidget
+            widgetDir: templates/Ling.Light_Kit_BootstrapWidgetLibrary/widgets/picasso/ZeroAdminStatSummaryIconWidget
+            template: default.php
+            vars: []
+            
+    footer: b$:Ling.Light_Kit_Admin/footer_default
+```
+
+
+
+
+Assigning widgets to page positions with babyYaml
+------------------
+2021-03-11
+
+
+A peculiarity of babyYaml files is that we don't have to group widgets into **blocks** before assigning them to a **page position**.
+
+In the [page example](#page-example) above, notice how the widgets are defined in the "body" zone:
+
+- the first assignment uses a [block alias](#block-alias), which refers to a group of widgets defined in a separate file
+- the second assignment directly assigns a widget to the "body" position
+
+
+In that regard, the babyYaml storage is more flexible than the database storage.
+
+
+Now what exactly is a **block alias**?
+
+Let's find out in the next section.
+
+
+
+
+### Block alias
+2021-03-21
+
+
+A **block alias** is used by the developers inside  the babyYaml files of the **pages**.
+
+A **block alias** is basically a short notation which references a **block**.
+
+We chose to use the **block alias** technique instead of the template inheritance system, as we found it's a bit more intuitive (i.e. less clumsy).
+This is explained in more details in the [zone alias conception](#zone-alias-conception) section.
+
+The **block alias**' notation is the following:
+
+- b$:$zoneId
+
+
+In other words, you start with the "**b$:**" string, immediately followed by your zone id.
+
+
+
+
+
+
 
 
 
@@ -71,51 +237,68 @@ dash, underscore and the slash (to create sub-directory based organization).
 
 database storage
 -----------
-2021-03-02 -> 2021-03-04
+2021-03-02 -> 2021-03-12
 
 
 For the database storage, we have the following tables:
 
 
 - lke_page: to store the pages  
-- lke_zone: to store the zones  
+- lke_block: to store the blocks  
 - lke_widget: to store widgets of both types [picasso](https://github.com/lingtalfi/Kit_PicassoWidget#the-picasso-widget-array) and 
   [prototype](https://github.com/lingtalfi/Kit_PrototypeWidget#the-prototype-widget-array).
   
-  
-
-- lke_page_has_zone: to store bindings between pages and zones.
-- lke_zone_has_widget: to store bindings between zones and widgets
+- lke_page_has_block: to associate the blocks to the different pages
+- lke_block_has_widget: to group widgets into blocks
 
 
 It basically looks like this:
 
-![lke-schema](https://lingtalfi.com/img/universe/Light_Kit_Editor/lke-schema.png)
+![lke-schema 2](https://lingtalfi.com/img/universe/Light_Kit_Editor/lke-schema-2.png)
 
 
 To understand the database model, please continue reading.
 
 
-The layout files call **positions**.
+The layout file arranges **positions** in a html canvas.
 
-And so because of this, **pages** are implicitly bound to **positions**.
+Because of this, **pages** are implicitly bound to **positions**.
 
-In our model, we group **widgets** into **zones** and attach these zones to a certain **position** of a given **page**.
-
-
-In other words, a **page** contains **positions**. Each **position** contains any number of **zones**. The **zone_index** defines the order
-in which the zones are displayed for a given position.
-
-Note that a widget needs to be in a zone in order to be bound to the page (i.e. it's not possible to attach a widget to the page directly).
+In our model, we group **widgets** into **blocks** that we then can attach to a **page**, on a given position.
 
 
+In other words, a **page** contains **positions**, and each **position** contains any number of **blocks**. 
+
+The **block_index** field defines the order in which the blocks are displayed for a given position.
+
+Note that a widget needs to be in a **block** in order to be bound to a page.
+
+That is to say that it's not possible to attach a widget to the page directly.
+
+
+
+### About identifiers
+2021-03-12
+
+I personally like to have my identifiers very explicit, so that I don't have to guess what they are.
+Basically, my database identifiers are based on the equivalent babyYaml storage structure.
+
+So I end up using the following identifiers formats, which I recommend using:
+
+- page.identifier: $planetDotName/$page_name
+- block.identifier: depending on whether it's defined in a babyYaml page or block: 
+    - blocks/$planetDotName/$block_name
+    - pages/$planetDotName/$page_name
+- widget.identifier: here I don't care (w1, w2, w3, ...) unless I need to target a specific widget  
 
 
 
 
-Zone alias
+
+
+Zone alias conception
 -----------
-2021-03-02
+2021-03-02 -> 2021-03-11
 
 
 A **zone alias** is a short notation which refer to a **zone**.
@@ -134,7 +317,7 @@ title: Light Kit Admin Home
 description: <
     This is the gui admin provided by the Light_Kit_Admin plugin (from the Light framework), using the zeroadmin theme by ling talfi
     >
-_parent: Light_Kit_Admin/kit/zeroadmin/dev/mainlayout_base
+_parent: Light_Kit_Admin/Ling.Light_Kit/zeroadmin/dev/mainlayout_base
 zones:
     body:
         -
@@ -243,9 +426,9 @@ description: <
 
 zones:
     header:
-        - z$:main_header    
+        - b$:main_header    
     body:
-        - z$:main_body    
+        - b$:main_body    
         -
             name: zeroadmin_herograph
             type: picasso
@@ -263,15 +446,15 @@ zones:
             >
             vars: []
     footer:
-        - z$:main_footer
+        - b$:main_footer
 ```
 
 
 So here, we have three **zone aliases**:
 
-- z$: main_header
-- z$: main_body
-- z$: main_footer
+- b$: main_header
+- b$: main_body
+- b$: main_footer
 
 Each of these reference another file which contains the corresponding zones.
 For instance the **main_header** alias refers to a **zone file**, which zone id is main_header, and looks like this:
@@ -301,7 +484,7 @@ The drawback is that is seems less dry, and is more verbose.
 
 So to recap, the **zone alias** notation looks like this:
 
-- z$: $zoneId
+- b$: $zoneId
 
 With: 
 

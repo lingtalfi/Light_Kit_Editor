@@ -1,6 +1,6 @@
 Light_Kit_Editor
 ===========
-2021-03-08
+2021-03-08 -> 2021-03-15
 
 
 
@@ -67,6 +67,10 @@ kit_editor:
 
 History Log
 =============
+
+- 0.1.2 -- 2021-03-15
+
+    - update planet to adapt Ling.Light:0.70.0
 
 - 0.1.1 -- 2021-03-09
 

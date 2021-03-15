@@ -61,19 +61,20 @@ class LightKitEditorDatabaseStorage extends LightKitEditorAbstractStorage
 
 
                 //--------------------------------------------
-                // FIRST ORDER THE ZONE SLOTS
+                // FIRST ORDER THE BLOCKS
                 //--------------------------------------------
                 /**
-                 * Make sure items are ordered by ascending zone_index,
-                 * so that the zone slots are already in the correct order.
+                 * Make sure items are ordered by ascending block_index,
+                 * so that the blocks are already in the correct order.
+                 *
                  * Note: this is tricky, be sure to understand how the schema works to understand
                  * what I'm doing here...
                  */
                 usort($arr, function ($item1, $item2) {
-                    if ($item1['zone_index'] > $item2['zone_index']) {
+                    if ($item1['block_index'] > $item2['block_index']) {
                         return 1;
                     }
-                    if ($item1['zone_index'] < $item2['zone_index']) {
+                    if ($item1['block_index'] < $item2['block_index']) {
                         return -1;
                     }
                     return 0;

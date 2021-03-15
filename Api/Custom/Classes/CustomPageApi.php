@@ -41,10 +41,10 @@ select
     p.bodyclass as page_bodyclass,
     
     h.position_name,
-    h.zone_index,
+    h.block_index,
     
-    z.id as zone_id,
-    z.identifier as zone_identifier,
+    z.id as block_id,
+    z.identifier as block_identifier,
     
     h2.position as widget_position,
     
@@ -65,9 +65,9 @@ select
     
 
 from lke_page p
-left join lke_page_has_zone h on h.page_id=p.id
-left join lke_zone z on z.id=h.zone_id
-left join lke_zone_has_widget h2 on h2.zone_id=z.id
+left join lke_page_has_block h on h.page_id=p.id
+left join lke_block z on z.id=h.block_id
+left join lke_block_has_widget h2 on h2.block_id=z.id
 left join lke_widget w on w.id=h2.widget_id
 
 where

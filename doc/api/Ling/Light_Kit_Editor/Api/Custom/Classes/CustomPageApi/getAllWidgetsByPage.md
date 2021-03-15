@@ -42,15 +42,15 @@ Each returned row has the following structure:
 - page_bodyclass
 
 
-(from lke_page_has_zone)
+(from lke_page_has_block)
 - position_name
-- zone_index
+- block_index
 
-(from lke_zone)
-- zone_id
-- zone_identifier
+(from lke_block)
+- block_id
+- block_identifier
 
-(from lke_zone_has_widget)
+(from lke_block_has_widget)
 - widget_position
 
 (from lke_widget)
