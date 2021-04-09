@@ -4,7 +4,7 @@
 
 The CustomPageApiInterface class
 ================
-2021-03-01 --> 2021-03-15
+2021-03-01 --> 2021-04-09
 
 
 
@@ -49,6 +49,7 @@ abstract class <span class="pl-k">CustomPageApiInterface</span> implements [Page
     - abstract public [PageApiInterface::deletePageByIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageByIdentifier.md)(string $identifier) : void
     - abstract public [PageApiInterface::deletePageByIds](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageByIds.md)(array $ids) : void
     - abstract public [PageApiInterface::deletePageByIdentifiers](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageByIdentifiers.md)(array $identifiers) : void
+    - abstract public [PageApiInterface::deletePageBySiteId](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageBySiteId.md)(int $siteId) : void
 
 }
 
@@ -82,6 +83,7 @@ Methods
 - [PageApiInterface::deletePageByIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageByIdentifier.md) &ndash; Deletes the page identified by the given identifier.
 - [PageApiInterface::deletePageByIds](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageByIds.md) &ndash; Deletes the page rows identified by the given ids.
 - [PageApiInterface::deletePageByIdentifiers](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageByIdentifiers.md) &ndash; Deletes the page rows identified by the given identifiers.
+- [PageApiInterface::deletePageBySiteId](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/PageApiInterface/deletePageBySiteId.md) &ndash; Deletes the page rows having the given site id.
 
 
 

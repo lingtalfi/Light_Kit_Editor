@@ -50,7 +50,7 @@ Returns array | false.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorDatabaseStorage::getPageConf](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L38-L156)
+See the source code for method [LightKitEditorDatabaseStorage::getPageConf](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L68-L186)
 
 
 See Also
@@ -58,5 +58,5 @@ See Also
 
 The [LightKitEditorDatabaseStorage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage.md) class.
 
-Previous method: [addPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/addPage.md)<br>Next method: [toBaby](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/toBaby.md)<br>
+Previous method: [addBlock](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/addBlock.md)<br>Next method: [toBaby](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/toBaby.md)<br>
 

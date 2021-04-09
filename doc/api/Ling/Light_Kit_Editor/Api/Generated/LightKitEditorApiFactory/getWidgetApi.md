@@ -46,7 +46,7 @@ Returns [CustomWidgetApiInterface](https://github.com/lingtalfi/Light_Kit_Editor
 
 Source Code
 ===========
-See the source code for method [LightKitEditorApiFactory::getWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L57-L63)
+See the source code for method [LightKitEditorApiFactory::getWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L59-L65)
 
 
 See Also

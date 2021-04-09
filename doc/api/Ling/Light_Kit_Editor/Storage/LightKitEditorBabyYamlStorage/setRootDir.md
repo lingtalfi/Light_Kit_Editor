@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorBabyYamlStorage::setRootDir](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorBabyYamlStorage.php#L37-L40)
+See the source code for method [LightKitEditorBabyYamlStorage::setRootDir](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorBabyYamlStorage.php#L38-L41)
 
 
 See Also

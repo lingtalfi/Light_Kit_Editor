@@ -46,7 +46,7 @@ Returns [CustomPageHasBlockApiInterface](https://github.com/lingtalfi/Light_Kit_
 
 Source Code
 ===========
-See the source code for method [LightKitEditorApiFactory::getPageHasBlockApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L109-L115)
+See the source code for method [LightKitEditorApiFactory::getPageHasBlockApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L124-L130)
 
 
 See Also

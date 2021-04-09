@@ -4,7 +4,7 @@
 
 The CustomPageHasBlockApi class
 ================
-2021-03-01 --> 2021-03-15
+2021-03-01 --> 2021-04-09
 
 
 
@@ -99,4 +99,4 @@ See the source code of [Ling\Light_Kit_Editor\Api\Custom\Classes\CustomPageHasBl
 
 SeeAlso
 ==============
-Previous class: [CustomPageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Classes/CustomPageApi.md)<br>Next class: [CustomWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Classes/CustomWidgetApi.md)<br>
+Previous class: [CustomPageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Classes/CustomPageApi.md)<br>Next class: [CustomSiteApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Custom/Classes/CustomSiteApi.md)<br>

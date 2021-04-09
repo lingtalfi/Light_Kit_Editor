@@ -49,7 +49,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorBabyYamlStorage::getWidgetsByBlock](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorBabyYamlStorage.php#L128-L136)
+See the source code for method [LightKitEditorBabyYamlStorage::getWidgetsByBlock](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorBabyYamlStorage.php#L157-L165)
 
 
 See Also
@@ -57,5 +57,5 @@ See Also
 
 The [LightKitEditorBabyYamlStorage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage.md) class.
 
-Previous method: [resolveZoneAlias](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/resolveZoneAlias.md)<br>
+Previous method: [resolveZoneAlias](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/resolveZoneAlias.md)<br>Next method: [sanitizePath](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorBabyYamlStorage/sanitizePath.md)<br>
 

@@ -4,7 +4,7 @@
 
 The WidgetApi class
 ================
-2021-03-01 --> 2021-03-15
+2021-03-01 --> 2021-04-09
 
 
 
@@ -119,4 +119,4 @@ See the source code of [Ling\Light_Kit_Editor\Api\Generated\Classes\WidgetApi](h
 
 SeeAlso
 ==============
-Previous class: [PageHasBlockApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/PageHasBlockApi.md)<br>Next class: [BlockApiInterface](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/BlockApiInterface.md)<br>
+Previous class: [SiteApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Classes/SiteApi.md)<br>Next class: [BlockApiInterface](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Api/Generated/Interfaces/BlockApiInterface.md)<br>

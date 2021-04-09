@@ -46,7 +46,7 @@ Returns [CustomBlockHasWidgetApiInterface](https://github.com/lingtalfi/Light_Ki
 
 Source Code
 ===========
-See the source code for method [LightKitEditorApiFactory::getBlockHasWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L96-L102)
+See the source code for method [LightKitEditorApiFactory::getBlockHasWidgetApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Api/Generated/LightKitEditorApiFactory.php#L111-L117)
 
 
 See Also

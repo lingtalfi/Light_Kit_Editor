@@ -1,6 +1,6 @@
 Kit theme, conception notes
 ===========
-2021-03-11
+2021-03-11 -> 2021-04-09
 
 
 
@@ -61,15 +61,21 @@ That's the main idea.
 
 The t variable
 ------------
-2021-03-11
+2021-03-11 -> 2021-04-09
 
-So how do you change the layouts called from the pages?
 
-We will use a variable named **$t**. 
 
-The tools we will be using will basically replace the **$t** variable by the actual name of the theme.
+To add maximum flexibility, we introduce the $t variable.
 
-So for instance, here is how a page calls a layout:
+The basic idea is that we set a default theme at the website level, and then, if necessary, we can override the theme individually at the page level.
+
+
+To implement this system, do the following.
+
+In your [kit page configuration](https://github.com/lingtalfi/Kit/blob/master/doc/pages/conception-notes.md#the-kit-configuration-array)'s layout property,
+use the variable **$t** to replace the actual name of the theme.
+
+So for instance, your page conf should look like this:
 
 
 ```yaml
@@ -80,16 +86,59 @@ layout: config/open/Ling.Light_Kit_Admin/lke/layouts/$t/main_layout.php
 
 ```
 
-Note that we put the layout files in the **open** config, so that it's easier for third-party authors to create their own theme:
-they could just copy the theme directory (i.e. $t) and replace it with whatever they want.
 
-Note2: if you override the theme, notice that your layout file still needs to be named **main_layout.php**.
+Now to define the actual value of the **$t** variable, we use either:
+
+- the vars.theme variable of the page if we want to change the theme at the page level
+- the theme variable of the website conf if we want to change the theme at the website level
+
+We can define the **$t** variable in both places, and this is actually the solution that yields maximum flexibility.
 
 
-So now we have the ability to change the layout, which means we should be able to cover about 95%
-of the theme, just by adding our own css files and using css selectors to target the elements we want to change.
+Let's now define the **vars.theme** variable of the page with a value of **$t**, so that our page conf now looks something like this:
 
-However, sometimes that might not be enough, that's when we need to dive even more, at the widget level.
+
+
+
+```yaml
+
+label: Light Kit Admin Dashboard
+layout: config/open/Ling.Light_Kit_Admin/lke/layouts/$t/main_layout.php
+vars:
+    theme: $t  # if you want to override the theme at this page level, just replace $t with an actual value
+...
+
+```
+
+So now, the **$t** from the layout property will be replaced with the value we've just defined in **vars.theme**, which happens to be **$t** for now (so no change so far).
+
+But now open your [website configuration](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/conception-notes.md#adding-website) and define the theme variable with the actual value you want.
+Your website conf should look something like this:
+
+
+
+```yaml
+
+- 
+    identifier: Ling.Light_Kit_Admin.backoffice
+    provider: Ling.Light_Kit_Admin
+    engine: babyYaml
+    rootDir: ${app_dir}/config/open/Ling.Light_Kit_Admin/lke
+    label: Ling.Light_Kit_Admin
+    readonly: true
+    theme: Ling.Light_Kit_Admin/zeroadmin
+
+
+
+
+```
+
+So now, the **vars.theme**'s **$t** variable from the page conf will be replaced with our **website.theme** variable.
+
+
+With this system, we can define the theme at the website level and/or the page level easily.
+
+
 
 
 

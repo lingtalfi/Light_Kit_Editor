@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorDatabaseStorage::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L18-L21)
+See the source code for method [LightKitEditorDatabaseStorage::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L20-L23)
 
 
 See Also

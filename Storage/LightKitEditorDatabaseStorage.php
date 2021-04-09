@@ -4,6 +4,8 @@
 namespace Ling\Light_Kit_Editor\Storage;
 
 use Ling\BabyYaml\BabyYamlUtil;
+use Ling\Bat\ArrayTool;
+use Ling\Light_Kit_Editor\Api\Custom\CustomLightKitEditorApiFactory;
 use Ling\Light_Kit_Editor\Service\LightKitEditorService;
 
 /**
@@ -28,7 +30,35 @@ class LightKitEditorDatabaseStorage extends LightKitEditorAbstractStorage
      */
     public function addPage(string $pageName, array $pageConf = [])
     {
-        a("adding page $pageName", $pageConf);
+
+        $arr = ArrayTool::superimpose($pageConf, [
+            'label' => '',
+            'layout' => '',
+            'layout_vars' => '',
+            'title' => '',
+            'description' => '',
+            'bodyClass' => '',
+        ]);
+        $arr['identifier'] = $pageName;
+        $factory = $this->getFactory();
+        $pageApi = $factory->getPageApi();
+        $page = $pageApi->getPageByIdentifier($pageName);
+        if (null === $page) {
+            $pageApi->insertPage($arr);
+        } else {
+            $pageApi->updatePage($arr, [
+                'identifier' => $pageName,
+            ]);
+        }
+    }
+
+
+    /**
+     * @implementation
+     */
+    public function addBlock(string $identifier)
+    {
+        az("h", $identifier);
     }
 
 
@@ -173,6 +203,16 @@ class LightKitEditorDatabaseStorage extends LightKitEditorAbstractStorage
             return null;
         }
         return BabyYamlUtil::readBabyYamlString($str);
+    }
+
+
+    /**
+     * Returns the kit editor api factory.
+     * @return CustomLightKitEditorApiFactory
+     */
+    private function getFactory(): CustomLightKitEditorApiFactory
+    {
+        return $this->getContainer()->get("kit_editor")->getFactory();
     }
 
 }

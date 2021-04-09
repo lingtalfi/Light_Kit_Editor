@@ -1,6 +1,6 @@
 Light_Kit_Editor
 ===========
-2021-03-08 -> 2021-03-15
+2021-03-08 -> 2021-04-09
 
 
 
@@ -68,6 +68,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.0 -- 2021-04-09
+
+    - add main controller to render any page, add multi storage api class
+  
 - 0.1.2 -- 2021-03-15
 
     - update planet to adapt Ling.Light:0.70.0

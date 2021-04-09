@@ -7,7 +7,7 @@ LightKitEditorStorageInterface::addPage
 
 
 
-LightKitEditorStorageInterface::addPage — Adds a page.
+LightKitEditorStorageInterface::addPage — Adds a page, or replaces it if it already exist.
 
 
 
@@ -21,9 +21,13 @@ abstract public [LightKitEditorStorageInterface::addPage](https://github.com/lin
 
 
 
-Adds a page.
+Adds a page, or replaces it if it already exist.
 
-The given pageConf is a [kit configuration array](https://github.com/lingtalfi/Kit#the-kit-configuration-array).
+The given pageConf is a [kit configuration array](https://github.com/lingtalfi/Kit#the-kit-configuration-array),
+without the zones part (i.e. zones must be added separately).
+
+
+Throws an exception if something is wrong.
 
 
 
@@ -47,6 +51,11 @@ Return values
 Returns void.
 
 
+Exceptions thrown
+================
+
+- [Exception](http://php.net/manual/en/class.exception.php).&nbsp;
+
 
 
 
@@ -55,7 +64,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorStorageInterface::addPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorStorageInterface.php#L21-L21)
+See the source code for method [LightKitEditorStorageInterface::addPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorStorageInterface.php#L26-L26)
 
 
 See Also
@@ -63,5 +72,5 @@ See Also
 
 The [LightKitEditorStorageInterface](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorStorageInterface.md) class.
 
-Next method: [getPageConf](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorStorageInterface/getPageConf.md)<br>
+Next method: [addBlock](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorStorageInterface/addBlock.md)<br>
 

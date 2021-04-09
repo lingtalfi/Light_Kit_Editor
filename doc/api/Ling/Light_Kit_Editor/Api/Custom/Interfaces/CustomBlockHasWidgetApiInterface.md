@@ -4,7 +4,7 @@
 
 The CustomBlockHasWidgetApiInterface class
 ================
-2021-03-01 --> 2021-03-15
+2021-03-01 --> 2021-04-09
 
 
 

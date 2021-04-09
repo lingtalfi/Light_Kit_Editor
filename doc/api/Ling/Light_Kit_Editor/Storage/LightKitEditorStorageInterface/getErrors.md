@@ -46,7 +46,7 @@ Returns array.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorStorageInterface::getErrors](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorStorageInterface.php#L40-L40)
+See the source code for method [LightKitEditorStorageInterface::getErrors](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorStorageInterface.php#L55-L55)
 
 
 See Also

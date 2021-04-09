@@ -7,7 +7,7 @@ LightKitEditorDatabaseStorage::addPage
 
 
 
-LightKitEditorDatabaseStorage::addPage — Adds a page.
+LightKitEditorDatabaseStorage::addPage — Adds a page, or replaces it if it already exist.
 
 
 
@@ -21,9 +21,13 @@ public [LightKitEditorDatabaseStorage::addPage](https://github.com/lingtalfi/Lig
 
 
 
-Adds a page.
+Adds a page, or replaces it if it already exist.
 
-The given pageConf is a [kit configuration array](https://github.com/lingtalfi/Kit#the-kit-configuration-array).
+The given pageConf is a [kit configuration array](https://github.com/lingtalfi/Kit#the-kit-configuration-array),
+without the zones part (i.e. zones must be added separately).
+
+
+Throws an exception if something is wrong.
 
 
 
@@ -47,6 +51,11 @@ Return values
 Returns void.
 
 
+Exceptions thrown
+================
+
+- [Exception](http://php.net/manual/en/class.exception.php).&nbsp;
+
 
 
 
@@ -55,7 +64,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorDatabaseStorage::addPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L29-L32)
+See the source code for method [LightKitEditorDatabaseStorage::addPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Storage/LightKitEditorDatabaseStorage.php#L31-L53)
 
 
 See Also
@@ -63,5 +72,5 @@ See Also
 
 The [LightKitEditorDatabaseStorage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage.md) class.
 
-Previous method: [__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/__construct.md)<br>Next method: [getPageConf](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/getPageConf.md)<br>
+Previous method: [__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/__construct.md)<br>Next method: [addBlock](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorDatabaseStorage/addBlock.md)<br>
 

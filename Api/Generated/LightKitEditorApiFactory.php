@@ -10,6 +10,8 @@ use Ling\Light_Kit_Editor\Api\Custom\Classes\CustomWidgetApi;
 use Ling\Light_Kit_Editor\Api\Custom\Interfaces\CustomWidgetApiInterface;
 use Ling\Light_Kit_Editor\Api\Custom\Classes\CustomBlockApi;
 use Ling\Light_Kit_Editor\Api\Custom\Interfaces\CustomBlockApiInterface;
+use Ling\Light_Kit_Editor\Api\Custom\Classes\CustomSiteApi;
+use Ling\Light_Kit_Editor\Api\Custom\Interfaces\CustomSiteApiInterface;
 use Ling\Light_Kit_Editor\Api\Custom\Classes\CustomPageApi;
 use Ling\Light_Kit_Editor\Api\Custom\Interfaces\CustomPageApiInterface;
 use Ling\Light_Kit_Editor\Api\Custom\Classes\CustomBlockHasWidgetApi;
@@ -70,6 +72,19 @@ class LightKitEditorApiFactory
     public function getBlockApi(): CustomBlockApiInterface
     {
         $o = new CustomBlockApi();
+        $o->setPdoWrapper($this->pdoWrapper);
+        $o->setContainer($this->container);
+        return $o;
+    }
+
+    /**
+     * Returns a CustomSiteApiInterface.
+     *
+     * @return CustomSiteApiInterface
+     */
+    public function getSiteApi(): CustomSiteApiInterface
+    {
+        $o = new CustomSiteApi();
         $o->setPdoWrapper($this->pdoWrapper);
         $o->setContainer($this->container);
         return $o;

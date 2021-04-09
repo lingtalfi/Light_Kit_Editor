@@ -1,6 +1,6 @@
 Light_Kit_Editor, conception notes
 ================
-2021-03-01 -> 2021-03-12
+2021-03-01 -> 2021-04-08
 
 **Light kit editor** (lke)'s purpose is to help users edit their [kit](https://github.com/lingtalfi/Kit) pages using a gui.
 
@@ -17,7 +17,7 @@ This is the concept of [kit web app](#the-kit-web-app), which basically introduc
 
 Summary
 ------------
-2021-03-12
+2021-03-12 -> 2021-04-08
 
 * [The kit web app](#the-kit-web-app)
 * [The two engines](#the-two-engines)
@@ -27,7 +27,12 @@ Summary
     * [Block alias](#block-alias)
   * [database storage](#database-storage)
   * [Zone alias conception](#zone-alias-conception)
+* [Adding websites](#adding-websites)
+* [The website controller](#the-website-controller)
   
+
+
+
 
 
 
@@ -80,11 +85,23 @@ Which storage you choose is entirely up to you.
 
 babyYaml storage
 -----------
-2021-03-02 -> 2021-03-12
+2021-03-02 -> 2021-04-08
 
 
 The organization of the babyYaml storage is all contained in a so-called root directory (aka **kit web app** directory), which is a directory of your choice.
 We will refer to it as **$root** in this section.
+
+
+If you don't have a more precise idea of what you are doing, we suggest that your root path is:
+
+- $app_dir/config/open/Light_Kit_Editor/websites/$your_website_identifier
+
+With:
+
+- $app_dir: the absolute path of the application root dir
+- $your_website_identifier: a unique identifier representing your website
+
+
 
 
 A typical **kit web app** directory contains the following types of file:
@@ -123,7 +140,7 @@ which is [eco-structure](https://github.com/lingtalfi/Light/blob/master/personal
 
 With:
 
-- **$web_app_name**: the name of your **kit web app**
+- **$web_app_name**: the name of your **kit web app** (aka site)
 - **$planetDotName**: the [planet dot name](https://github.com/karayabin/universe-snapshot#the-planet-dot-name) of the contributing plugin
 - **$theme_name**: the name of your [theme](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/kit-theme.md)
 
@@ -237,13 +254,14 @@ In other words, you start with the "**b$:**" string, immediately followed by you
 
 database storage
 -----------
-2021-03-02 -> 2021-03-12
+2021-03-02 -> 2021-03-30
 
 
 For the database storage, we have the following tables:
 
 
-- lke_page: to store the pages  
+- lke_site: to store sites (aka web apps)  
+- lke_page: to store the pages, each page belongs to a site
 - lke_block: to store the blocks  
 - lke_widget: to store widgets of both types [picasso](https://github.com/lingtalfi/Kit_PicassoWidget#the-picasso-widget-array) and 
   [prototype](https://github.com/lingtalfi/Kit_PrototypeWidget#the-prototype-widget-array).
@@ -254,7 +272,7 @@ For the database storage, we have the following tables:
 
 It basically looks like this:
 
-![lke-schema 2](https://lingtalfi.com/img/universe/Light_Kit_Editor/lke-schema-2.png)
+![lke-schema 3](https://lingtalfi.com/img/universe/Light_Kit_Editor/lke-schema-3.png)
 
 
 To understand the database model, please continue reading.
@@ -498,9 +516,69 @@ Light kit editor uses the zone alias system instead of the template inheritance 
 
 
 
+Adding websites
+==========
+2021-04-01
 
 
 
+Third party authors can add their own websites via our [open registration system](https://github.com/lingtalfi/Light/blob/master/personal/mydoc/pages/design/open-vs-close-service-registration.md#the-open-registration).
+
+We provide the following file:
+
+- config/open/Ling.Light_Kit_Editor/websites.byml
+
+
+Example:
+
+```yaml
+-
+    provider: Ling.Light_Kit_Admin
+    engine: babyYaml
+    identifier: some_identifier
+    rootDir: ${app_dir}/config/open/Ling.Light_Kit_Admin/lke
+    label: Website 1
+
+-
+    provider: Ling.Light_Kit_Admin
+    engine: db
+    identifier: lke
+    label: Website name
+
+```
+
+Each entry is an item representing a website, which has the following structure:
+
+- provider: string, the [dot name](https://github.com/karayabin/universe-snapshot#the-planet-dot-name) of the plugin providing the website
+- engine: string, which engine to use for this website (db or babyYaml)
+- identifier: string, a unique identifier for this website. This will be used as a reference internally
+- ?rootDir: string, only necessary for the babyYaml engine: the root dir of the website files. The ${app_dir} tag will be resolved
+    to the application root directory.
+- label: string, the human label for the website, will be used in the gui
+- ?theme: string, the default theme to use for this website, see our [kit-theme](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/kit-theme.md) page for more info
+- ...: other properties might be added
+
+
+
+You can use our service to register a website entry in the **websites** file.
+
+
+
+
+The website controller
+=========
+2021-04-08
+
+
+We also provide a website controller class, which purpose is to render all the websites' pages.
+We create a dedicated route to access it: 
+
+- kit
+
+The expected GET parameters are the following:
+
+- website_id: the website identifier
+- page_id: the page identifier
 
 
 
