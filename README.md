@@ -68,6 +68,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.2 -- 2021-05-11
+
+    - Update deps (by CommitWizard).
+
 - 0.2.1 -- 2021-05-11
 
     - Update dependencies to Ling.Light_EasyRoute (pushed by SubscribersUtil)
