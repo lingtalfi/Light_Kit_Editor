@@ -1,6 +1,6 @@
 Ling/Light_Kit_Editor
 ================
-2021-03-01 --> 2021-04-09
+2021-03-01 --> 2021-05-11
 
 
 
@@ -720,6 +720,7 @@ Dependencies
 - [Light_PlanetInstaller](https://github.com/lingtalfi/Light_PlanetInstaller)
 - [Light_Realform](https://github.com/lingtalfi/Light_Realform)
 - [Light_Realist](https://github.com/lingtalfi/Light_Realist)
+- [Light_Vars](https://github.com/lingtalfi/Light_Vars)
 - [LogicalOperator](https://github.com/lingtalfi/LogicalOperator)
 - [PaginationHelper](https://github.com/lingtalfi/PaginationHelper)
 - [RowsSortHelper](https://github.com/lingtalfi/RowsSortHelper)

@@ -8,7 +8,7 @@ use Ling\BabyYaml\BabyYamlUtil;
 use Ling\Light\Http\HttpResponse;
 use Ling\Light\Http\HttpResponseInterface;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
-use Ling\Light_Kit\PageConfigurationTransformer\ThemeTransformer;
+use Ling\Light_Kit\ConfigurationTransformer\ThemeTransformer;
 use Ling\Light_Kit\Service\LightKitService;
 use Ling\Light_Kit_Editor\Api\Custom\CustomLightKitEditorApiFactory;
 use Ling\Light_Kit_Editor\Exception\LightKitEditorException;
@@ -17,6 +17,7 @@ use Ling\Light_Kit_Editor\Light_Realist\DuelistEngine\LightKitEditorBabyYamlDuel
 use Ling\Light_Kit_Editor\Storage\LkeMultiStorageApi;
 use Ling\Light_Realform\SuccessHandler\RealformSuccessHandlerInterface;
 use Ling\Light_Realist\DuelistEngine\DuelistEngineInterface;
+use Ling\Light_Vars\Service\LightVarsService;
 
 
 /**
@@ -156,12 +157,14 @@ class LightKitEditorService
 
         $page['layout'] = str_replace('$t', $theme, $page['layout']);
 
-
-
-
         $themeTransformer = new ThemeTransformer();
         $themeTransformer->setTheme($theme);
         $kit->addPageConfigurationTransformer($themeTransformer);
+
+
+
+//az($page);
+
 
 
         return new HttpResponse($kit->renderPage($pageId, [

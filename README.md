@@ -68,6 +68,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.1 -- 2021-05-11
+
+    - Update dependencies to Ling.Light_EasyRoute (pushed by SubscribersUtil)
+
 - 0.2.0 -- 2021-04-09
 
     - add main controller to render any page, add multi storage api class
