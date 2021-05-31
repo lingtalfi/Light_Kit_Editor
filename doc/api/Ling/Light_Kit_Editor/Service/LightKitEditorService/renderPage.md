@@ -53,7 +53,7 @@ Returns [HttpResponseInterface](https://github.com/lingtalfi/Light/blob/master/d
 
 Source Code
 ===========
-See the source code for method [LightKitEditorService::renderPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Service/LightKitEditorService.php#L120-L174)
+See the source code for method [LightKitEditorService::renderPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Service/LightKitEditorService.php#L115-L167)
 
 
 See Also

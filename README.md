@@ -1,6 +1,6 @@
 Light_Kit_Editor
 ===========
-2021-03-08 -> 2021-04-09
+2021-03-08 -> 2021-05-31
 
 
 
@@ -68,6 +68,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.3 -- 2021-05-31
+
+    - update api to work with Light_PlanetInstaller 2.0.0
+  
 - 0.2.2 -- 2021-05-11
 
     - Update deps (by CommitWizard).
