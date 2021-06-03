@@ -1,6 +1,6 @@
 Light_Kit_Editor
 ===========
-2021-03-08 -> 2021-05-31
+2021-03-08 -> 2021-06-03
 
 
 
@@ -68,6 +68,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.5 -- 2021-06-03
+
+    - adapt api to work with Light_PlanetInstaller:2.0.4
+  
 - 0.2.4 -- 2021-05-31
 
     - Removing trailing plus in lpi-deps file (to work with Light_PlanetInstaller:2.0.0 api
