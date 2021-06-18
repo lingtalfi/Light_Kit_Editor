@@ -12,6 +12,7 @@ use Ling\Light_Kit\ConfigurationTransformer\ThemeTransformer;
 use Ling\Light_Kit\Service\LightKitService;
 use Ling\Light_Kit_Editor\Api\Custom\CustomLightKitEditorApiFactory;
 use Ling\Light_Kit_Editor\Exception\LightKitEditorException;
+use Ling\Light_Kit_Editor\Light_Kit\Page_Renderer\LightKitEditorPageRenderer;
 use Ling\Light_Kit_Editor\Storage\LkeMultiStorageApi;
 
 
@@ -37,12 +38,20 @@ class LightKitEditorService
 
 
     /**
+     * This property holds the defaultWebsiteIdentifier for this instance.
+     * @var string
+     */
+    private string $defaultWebsiteIdentifier;
+
+
+    /**
      * Builds the LightKitEditorService instance.
      */
     public function __construct()
     {
         $this->container = null;
         $this->factory = null;
+        $this->defaultWebsiteIdentifier = "default";
     }
 
     /**
@@ -54,6 +63,28 @@ class LightKitEditorService
     {
         $this->container = $container;
     }
+
+    /**
+     * Sets the defaultWebsiteIdentifier.
+     *
+     * @param string $defaultWebsiteIdentifier
+     */
+    public function setDefaultWebsiteIdentifier(string $defaultWebsiteIdentifier)
+    {
+        $this->defaultWebsiteIdentifier = $defaultWebsiteIdentifier;
+    }
+
+    /**
+     * Returns the defaultWebsiteIdentifier of this instance.
+     *
+     * @return string
+     */
+    public function getDefaultWebsiteIdentifier(): string
+    {
+        return $this->defaultWebsiteIdentifier;
+    }
+
+
 
 
 
@@ -314,21 +345,6 @@ class LightKitEditorService
         return false;
     }
 
-
-    //--------------------------------------------
-    //
-    //--------------------------------------------
-    /**
-     * Throws an exception.
-     * @param string $msg
-     * @param int|null $code
-     * @throws \Exception
-     */
-    private function error(string $msg, int $code = null)
-    {
-        throw new LightKitEditorException(static::class . ": " . $msg, $code);
-    }
-
     /**
      * Returns the factory for this plugin's api.
      *
@@ -342,6 +358,42 @@ class LightKitEditorService
             $this->factory->setPdoWrapper($this->container->get("database"));
         }
         return $this->factory;
+    }
+
+
+    /**
+     * Returns a configured kit page renderer instance.
+     *
+     * Available init options are:
+     *
+     * - theme
+     * - root
+     *
+     * See the LightKitEditorPageRenderer->init method for more details.
+     *
+     * @param array $initOptions
+     * @return LightKitEditorPageRenderer
+     */
+    public function getPageRenderer(array $initOptions = []): LightKitEditorPageRenderer
+    {
+        $r = new LightKitEditorPageRenderer();
+        $r->init($initOptions);
+        return $r;
+    }
+
+
+    //--------------------------------------------
+    //
+    //--------------------------------------------
+    /**
+     * Throws an exception.
+     * @param string $msg
+     * @param int|null $code
+     * @throws \Exception
+     */
+    private function error(string $msg, int $code = null)
+    {
+        throw new LightKitEditorException(static::class . ": " . $msg, $code);
     }
 
 

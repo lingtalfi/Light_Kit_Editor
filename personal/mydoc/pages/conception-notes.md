@@ -29,9 +29,8 @@ Summary
   * [Zone alias conception](#zone-alias-conception)
 * [Adding websites](#adding-websites)
 * [The website controller](#the-website-controller)
+* [The kit editor page renderer](#the-kit-editor-page-renderer)
   
-
-
 
 
 
@@ -85,22 +84,20 @@ The type of storage you choose is entirely up to you.
 
 babyYaml storage
 -----------
-2021-03-02 -> 2021-04-08
+2021-03-02 -> 2021-06-18
 
 
 The organization of the babyYaml storage is all contained in a so-called root directory (aka **kit web app** directory), which is a directory of your choice.
 We will refer to it as **$root** in this section.
 
+You can put the **$root** dir where you want.
 
-If you don't have a more precise idea of what you are doing, we suggest that your root path is:
+We recommend that you put it in:
 
-- $app_dir/config/open/Light_Kit_Editor/websites/$your_website_identifier
+- $app_dir/config/open/$yourGalaxy.$yourPlanet/Ling.Light_Kit_Editor/$yourWebsiteIdentifier
 
-With:
 
-- $app_dir: the absolute path of the application root dir
-- $your_website_identifier: a unique identifier representing your website
-
+This way, your website is "open" to other planets (continue reading to understand).   
 
 
 
@@ -150,6 +147,14 @@ So for instance in the above example, we have the following mappings:
 - **$layoutId**: $planetDotName/$theme_name/layout_46819 
 - **$pageId**: $planetDotName/some_page 
 - **$blockId**: $planetDotName/some_block 
+
+
+
+
+
+
+
+
 
 
 
@@ -240,7 +245,6 @@ The **block alias**' notation is the following:
 
 
 In other words, you start with the "**b$:**" string, immediately followed by your zone id.
-
 
 
 
@@ -577,9 +581,31 @@ We create a dedicated route to access it:
 
 The expected GET parameters are the following:
 
-- website_id: the website identifier
-- page_id: the page identifier
+- ?**website_id**: the website identifier
+- **page_id**: the page identifier
 
+
+You can set a "default website identifier" via our service configuration (which defaults to "default").
+
+This way you don't have to specify the **website_id** parameter in GET. 
+
+
+
+
+
+
+
+The kit editor page renderer
+=========
+2021-06-18
+
+
+We provide our own replacement to the [LightKitPageRenderer](https://github.com/lingtalfi/Light_Kit/blob/master/doc/api/Ling/Light_Kit/PageRenderer/LightKitPageRenderer.md) (which is the main renderer of the kit system).
+
+You can use our page renderer to benefit the followings (assuming proper configuration):
+
+- the $t variable is automatically replaced with the theme name in the layout path.
+- the $root variable is automatically replaced with the relative $root path of your website (relative to the application dir)
 
 
 

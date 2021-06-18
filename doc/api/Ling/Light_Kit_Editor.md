@@ -1,6 +1,6 @@
 Ling/Light_Kit_Editor
 ================
-2021-03-01 --> 2021-06-03
+2021-03-01 --> 2021-06-18
 
 
 
@@ -641,6 +641,28 @@ Table of contents
     - [LightKitEditorEngine::getErrors](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Engine/LightKitEditorEngine/getErrors.md) &ndash; Returns the errors that occurred during the last method call.
     - [LightKitEditorEngine::__call](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Engine/LightKitEditorEngine/__call.md) &ndash; The php magic method to proxy to the corresponding LightKitEditorStorageInterface methods.
 - [LightKitEditorException](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Exception/LightKitEditorException.md) &ndash; The LightKitEditorException class.
+- [WebsiteRootTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer.md) &ndash; The WebsiteRootTransformer class.
+    - [WebsiteRootTransformer::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer/__construct.md) &ndash; Builds the WebsiteRootTransformer instance.
+    - [WebsiteRootTransformer::setRoot](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer/setRoot.md) &ndash; Sets the root.
+    - [WebsiteRootTransformer::transform](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer/transform.md) &ndash; Transforms the given configuration array in place.
+- [LightKitEditorPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer.md) &ndash; The LightKitEditorPageRenderer class.
+    - [LightKitEditorPageRenderer::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer/__construct.md) &ndash; Builds the LightKitEditorPageRenderer instance.
+    - [LightKitEditorPageRenderer::init](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer/init.md) &ndash; Initializes this instance.
+    - LightKitPageRenderer::setConfStorage &ndash; Sets the confStorage.
+    - LightKitPageRenderer::setContainer &ndash; Sets the container.
+    - LightKitPageRenderer::addPageConfigurationTransformer &ndash; Adds a ConfigurationTransformerInterface to this instance.
+    - LightKitPageRenderer::configure &ndash; Configures thi instance.
+    - LightKitPageRenderer::renderPage &ndash; Renders the given page.
+    - LightKitPageRenderer::getContainer &ndash; Returns a light service container instance.
+    - KitPageRenderer::countWidgets &ndash; Returns the number of widgets for a given zone.
+    - KitPageRenderer::setPageConf &ndash; Sets the pageConf.
+    - KitPageRenderer::setStrictMode &ndash; Sets the strictMode.
+    - KitPageRenderer::setErrorHandler &ndash; Sets the errorHandler.
+    - KitPageRenderer::registerWidgetHandler &ndash; Registers a widget handler for the given (widget) type.
+    - KitPageRenderer::setLayoutRootDir &ndash; Sets the layoutRootDir.
+    - KitPageRenderer::addWidgetConfDecorator &ndash; Adds a widget configuration decorator to this instance.
+    - KitPageRenderer::printPage &ndash; Prints the page.
+    - KitPageRenderer::printZone &ndash; Prints a zone.
 - [LightKitEditorPlanetInstaller](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_PlanetInstaller/LightKitEditorPlanetInstaller.md) &ndash; The LightKitEditorPlanetInstaller class.
     - [LightKitEditorPlanetInstaller::init2](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_PlanetInstaller/LightKitEditorPlanetInstaller/init2.md) &ndash; Executes the init 2 phase of the install command.
     - [LightKitEditorPlanetInstaller::undoInit2](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_PlanetInstaller/LightKitEditorPlanetInstaller/undoInit2.md) &ndash; Undoes the init 2 phase.
@@ -660,6 +682,8 @@ Table of contents
 - [LightKitEditorService](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService.md) &ndash; The LightKitEditorService class.
     - [LightKitEditorService::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/__construct.md) &ndash; Builds the LightKitEditorService instance.
     - [LightKitEditorService::setContainer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/setContainer.md) &ndash; Sets the container.
+    - [LightKitEditorService::setDefaultWebsiteIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/setDefaultWebsiteIdentifier.md) &ndash; Sets the defaultWebsiteIdentifier.
+    - [LightKitEditorService::getDefaultWebsiteIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getDefaultWebsiteIdentifier.md) &ndash; Returns the defaultWebsiteIdentifier of this instance.
     - [LightKitEditorService::getMultiStorageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getMultiStorageApi.md) &ndash; Returns a multi storage api.
     - [LightKitEditorService::renderPage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/renderPage.md) &ndash; Renders the page identified by the given arguments.
     - [LightKitEditorService::registerWebsite](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/registerWebsite.md) &ndash; Registers a website.
@@ -667,6 +691,7 @@ Table of contents
     - [LightKitEditorService::getWebsites](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getWebsites.md) &ndash; Returns the list of registered websites.
     - [LightKitEditorService::getWebsiteByIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getWebsiteByIdentifier.md) &ndash; Returns the info for the website identified by the given identifier.
     - [LightKitEditorService::getFactory](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getFactory.md) &ndash; Returns the factory for this plugin's api.
+    - [LightKitEditorService::getPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getPageRenderer.md) &ndash; Returns a configured kit page renderer instance.
 - [LightKitEditorAbstractStorage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage.md) &ndash; The LightKitEditorAbstractStorage interface.
     - [LightKitEditorAbstractStorage::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/__construct.md) &ndash; Builds the LightKitEditorAbstractStorage instance.
     - [LightKitEditorAbstractStorage::setContainer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/setContainer.md) &ndash; Sets the light service container interface.

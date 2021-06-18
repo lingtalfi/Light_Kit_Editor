@@ -1,6 +1,6 @@
 Light_Kit_Editor
 ===========
-2021-03-08 -> 2021-06-03
+2021-03-08 -> 2021-06-18
 
 
 
@@ -56,7 +56,8 @@ kit_editor:
     methods:
         setContainer:
             container: @container()
-
+        setDefaultWebsiteIdentifier:
+            identifier: default
 
 
 
@@ -68,6 +69,11 @@ kit_editor:
 History Log
 =============
 
+- 0.2.6 -- 2021-06-18
+
+    - add default website_identifier concept
+    - add own page renderer
+  
 - 0.2.5 -- 2021-06-03
 
     - adapt api to work with Light_PlanetInstaller:2.0.4
