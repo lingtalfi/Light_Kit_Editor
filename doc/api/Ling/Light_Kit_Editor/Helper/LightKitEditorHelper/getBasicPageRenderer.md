@@ -16,7 +16,7 @@ Description
 ================
 
 
-public static [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Helper/LightKitEditorHelper/getBasicPageRenderer.md)([Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) $container, ?array $options = []) : [LightKitEditorPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer.md)
+public static [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Helper/LightKitEditorHelper/getBasicPageRenderer.md)([Ling\Light\ServiceContainer\LightServiceContainerInterface](https://github.com/lingtalfi/Light/blob/master/doc/api/Ling/Light/ServiceContainer/LightServiceContainerInterface.md) $container, ?array $options = []) : [LightKitPageRenderer](https://github.com/lingtalfi/Light_Kit/blob/master/doc/api/Ling/Light_Kit/PageRenderer/LightKitPageRenderer.md)
 
 
 
@@ -56,7 +56,7 @@ Parameters
 Return values
 ================
 
-Returns [LightKitEditorPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer.md).
+Returns [LightKitPageRenderer](https://github.com/lingtalfi/Light_Kit/blob/master/doc/api/Ling/Light_Kit/PageRenderer/LightKitPageRenderer.md).
 
 
 Exceptions thrown
@@ -72,7 +72,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Helper/LightKitEditorHelper.php#L46-L82)
+See the source code for method [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Helper/LightKitEditorHelper.php#L47-L93)
 
 
 See Also

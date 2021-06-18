@@ -46,7 +46,7 @@ Returns [LkeMultiStorageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/
 
 Source Code
 ===========
-See the source code for method [LightKitEditorService::getMultiStorageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Service/LightKitEditorService.php#L131-L136)
+See the source code for method [LightKitEditorService::getMultiStorageApi](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Service/LightKitEditorService.php#L130-L135)
 
 
 See Also

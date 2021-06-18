@@ -12,7 +12,6 @@ dependencies:
         - Light_PlanetInstaller
         - Light_Realform
         - Light_Realist
-        - Light_Vars
         - LogicalOperator
         - PaginationHelper
         - RowsSortHelper

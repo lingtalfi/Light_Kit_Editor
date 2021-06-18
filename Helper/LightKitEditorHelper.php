@@ -4,13 +4,14 @@
 namespace Ling\Light_Kit_Editor\Helper;
 
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
+use Ling\Light_Kit\ConfigurationTransformer\ThemeTransformer;
+use Ling\Light_Kit\PageRenderer\LightKitPageRenderer;
+use Ling\Light_Kit\Service\LightKitService;
 use Ling\Light_Kit_Editor\Engine\LightKitEditorEngine;
 use Ling\Light_Kit_Editor\Exception\LightKitEditorException;
-use Ling\Light_Kit_Editor\Light_Kit\Page_Renderer\LightKitEditorPageRenderer;
-use Ling\Light_Kit_Editor\Service\LightKitEditorService;
+use Ling\Light_Kit_Editor\Light_Kit\ConfigurationTransformer\WebsiteRootTransformer;
 use Ling\Light_Kit_Editor\Storage\LightKitEditorBabyYamlStorage;
 use Ling\Light_Kit_Editor\Storage\LightKitEditorDatabaseStorage;
-use Ling\Light_Vars\Service\LightVarsService;
 
 /**
  * The LightKitEditorHelper class.
@@ -40,30 +41,39 @@ class LightKitEditorHelper
      *
      * @param LightServiceContainerInterface $container
      * @param array $options
-     * @return LightKitEditorPageRenderer
+     * @return LightKitPageRenderer
      * @throws \Exception
      */
-    public static function getBasicPageRenderer(LightServiceContainerInterface $container, array $options = []): LightKitEditorPageRenderer
+    public static function getBasicPageRenderer(LightServiceContainerInterface $container, array $options = []): LightKitPageRenderer
     {
+
         /**
-         * @var $va LightVarsService
+         * @var $_kit LightKitService
          */
-        $va = $container->get("vars");
+        $_kit = $container->get("kit");
+        $pageRenderer = clone($_kit);
+
+
+        $appDir = $container->getApplicationDir();
+
+
         $theme = $options['theme'] ?? null;
         $root = $options['root'] ?? null;
         $type = $options['type'] ?? "babyYaml";
 
 
-        $appDir = $container->getApplicationDir();
-        /**
-         * @var $_ke LightKitEditorService
-         */
-        $_ke = $container->get("kit_editor");
-        $pageRenderer = $_ke->getPageRenderer([
-            "theme" => $theme,
-            "root" => $root,
-        ]);
+        if (null !== $theme) {
+            $themeTransformer = new ThemeTransformer();
+            $themeTransformer->setTheme($theme);
+            $pageRenderer->addPageConfigurationTransformer($themeTransformer);
+        }
 
+
+        if (null !== $root) {
+            $rootTransformer = new WebsiteRootTransformer();
+            $rootTransformer->setRoot($root);
+            $pageRenderer->addPageConfigurationTransformer($rootTransformer);
+        }
         $engine = new LightKitEditorEngine();
 
 
@@ -78,6 +88,7 @@ class LightKitEditorHelper
         $storage->setContainer($container);
         $engine->setStorage($storage);
         $pageRenderer->setConfStorage($engine);
+
         return $pageRenderer;
     }
 }

@@ -12,7 +12,6 @@ use Ling\Light_Kit\ConfigurationTransformer\ThemeTransformer;
 use Ling\Light_Kit\Service\LightKitService;
 use Ling\Light_Kit_Editor\Api\Custom\CustomLightKitEditorApiFactory;
 use Ling\Light_Kit_Editor\Exception\LightKitEditorException;
-use Ling\Light_Kit_Editor\Light_Kit\Page_Renderer\LightKitEditorPageRenderer;
 use Ling\Light_Kit_Editor\Storage\LkeMultiStorageApi;
 
 
@@ -361,25 +360,7 @@ class LightKitEditorService
     }
 
 
-    /**
-     * Returns a configured kit page renderer instance.
-     *
-     * Available init options are:
-     *
-     * - theme
-     * - root
-     *
-     * See the LightKitEditorPageRenderer->init method for more details.
-     *
-     * @param array $initOptions
-     * @return LightKitEditorPageRenderer
-     */
-    public function getPageRenderer(array $initOptions = []): LightKitEditorPageRenderer
-    {
-        $r = new LightKitEditorPageRenderer();
-        $r->init($initOptions);
-        return $r;
-    }
+
 
 
     //--------------------------------------------

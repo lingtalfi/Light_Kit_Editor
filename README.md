@@ -69,6 +69,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.8 -- 2021-06-19
+
+    - fix LightKitEditorHelper::getBasicPageRenderer not using the kit configured service as the instance base
+  
 - 0.2.7 -- 2021-06-18
 
     - add LightKitEditorHelper class

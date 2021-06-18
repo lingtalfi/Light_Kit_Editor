@@ -693,7 +693,6 @@ Table of contents
     - [LightKitEditorService::getWebsites](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getWebsites.md) &ndash; Returns the list of registered websites.
     - [LightKitEditorService::getWebsiteByIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getWebsiteByIdentifier.md) &ndash; Returns the info for the website identified by the given identifier.
     - [LightKitEditorService::getFactory](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getFactory.md) &ndash; Returns the factory for this plugin's api.
-    - [LightKitEditorService::getPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Service/LightKitEditorService/getPageRenderer.md) &ndash; Returns a configured kit page renderer instance.
 - [LightKitEditorAbstractStorage](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage.md) &ndash; The LightKitEditorAbstractStorage interface.
     - [LightKitEditorAbstractStorage::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/__construct.md) &ndash; Builds the LightKitEditorAbstractStorage instance.
     - [LightKitEditorAbstractStorage::setContainer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Storage/LightKitEditorAbstractStorage/setContainer.md) &ndash; Sets the light service container interface.
@@ -749,7 +748,6 @@ Dependencies
 - [Light_PlanetInstaller](https://github.com/lingtalfi/Light_PlanetInstaller)
 - [Light_Realform](https://github.com/lingtalfi/Light_Realform)
 - [Light_Realist](https://github.com/lingtalfi/Light_Realist)
-- [Light_Vars](https://github.com/lingtalfi/Light_Vars)
 - [LogicalOperator](https://github.com/lingtalfi/LogicalOperator)
 - [PaginationHelper](https://github.com/lingtalfi/PaginationHelper)
 - [RowsSortHelper](https://github.com/lingtalfi/RowsSortHelper)

@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [LightKitEditorService::setDefaultWebsiteIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Service/LightKitEditorService.php#L72-L75)
+See the source code for method [LightKitEditorService::setDefaultWebsiteIdentifier](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Service/LightKitEditorService.php#L71-L74)
 
 
 See Also
