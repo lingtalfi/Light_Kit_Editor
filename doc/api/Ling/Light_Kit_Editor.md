@@ -641,6 +641,8 @@ Table of contents
     - [LightKitEditorEngine::getErrors](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Engine/LightKitEditorEngine/getErrors.md) &ndash; Returns the errors that occurred during the last method call.
     - [LightKitEditorEngine::__call](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Engine/LightKitEditorEngine/__call.md) &ndash; The php magic method to proxy to the corresponding LightKitEditorStorageInterface methods.
 - [LightKitEditorException](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Exception/LightKitEditorException.md) &ndash; The LightKitEditorException class.
+- [LightKitEditorHelper](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Helper/LightKitEditorHelper.md) &ndash; The LightKitEditorHelper class.
+    - [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Helper/LightKitEditorHelper/getBasicPageRenderer.md) &ndash; Returns a basic kit editor page renderer, based on the given options.
 - [WebsiteRootTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer.md) &ndash; The WebsiteRootTransformer class.
     - [WebsiteRootTransformer::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer/__construct.md) &ndash; Builds the WebsiteRootTransformer instance.
     - [WebsiteRootTransformer::setRoot](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer/setRoot.md) &ndash; Sets the root.
@@ -747,6 +749,7 @@ Dependencies
 - [Light_PlanetInstaller](https://github.com/lingtalfi/Light_PlanetInstaller)
 - [Light_Realform](https://github.com/lingtalfi/Light_Realform)
 - [Light_Realist](https://github.com/lingtalfi/Light_Realist)
+- [Light_Vars](https://github.com/lingtalfi/Light_Vars)
 - [LogicalOperator](https://github.com/lingtalfi/LogicalOperator)
 - [PaginationHelper](https://github.com/lingtalfi/PaginationHelper)
 - [RowsSortHelper](https://github.com/lingtalfi/RowsSortHelper)

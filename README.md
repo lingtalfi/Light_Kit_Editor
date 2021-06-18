@@ -69,6 +69,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.7 -- 2021-06-18
+
+    - add LightKitEditorHelper class
+  
 - 0.2.6 -- 2021-06-18
 
     - add default website_identifier concept
