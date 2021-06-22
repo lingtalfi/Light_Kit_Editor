@@ -1,6 +1,6 @@
 Light_Kit_Editor
 ===========
-2021-03-08 -> 2021-06-18
+2021-03-08 -> 2021-06-22
 
 
 
@@ -69,6 +69,10 @@ kit_editor:
 History Log
 =============
 
+- 0.2.9 -- 2021-06-22
+
+    - fix service->renderPage not taking advantage of LightKitEditorHelper::getBasicPageRenderer
+  
 - 0.2.8 -- 2021-06-19
 
     - fix LightKitEditorHelper::getBasicPageRenderer not using the kit configured service as the instance base

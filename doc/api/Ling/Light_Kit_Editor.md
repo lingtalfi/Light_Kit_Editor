@@ -1,6 +1,6 @@
 Ling/Light_Kit_Editor
 ================
-2021-03-01 --> 2021-06-18
+2021-03-01 --> 2021-06-22
 
 
 
@@ -643,6 +643,10 @@ Table of contents
 - [LightKitEditorException](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Exception/LightKitEditorException.md) &ndash; The LightKitEditorException class.
 - [LightKitEditorHelper](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Helper/LightKitEditorHelper.md) &ndash; The LightKitEditorHelper class.
     - [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Helper/LightKitEditorHelper/getBasicPageRenderer.md) &ndash; Returns a basic kit editor page renderer, based on the given options.
+- [AppDirTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/AppDirTransformer.md) &ndash; The AppDirTransformer class.
+    - [AppDirTransformer::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/AppDirTransformer/__construct.md) &ndash; Builds the WebsiteRootTransformer instance.
+    - [AppDirTransformer::setAppDir](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/AppDirTransformer/setAppDir.md) &ndash; Sets the appDir.
+    - [AppDirTransformer::transform](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/AppDirTransformer/transform.md) &ndash; Transforms the given configuration array in place.
 - [WebsiteRootTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer.md) &ndash; The WebsiteRootTransformer class.
     - [WebsiteRootTransformer::__construct](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer/__construct.md) &ndash; Builds the WebsiteRootTransformer instance.
     - [WebsiteRootTransformer::setRoot](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer/setRoot.md) &ndash; Sets the root.

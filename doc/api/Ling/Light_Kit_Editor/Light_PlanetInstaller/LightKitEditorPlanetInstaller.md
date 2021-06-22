@@ -4,7 +4,7 @@
 
 The LightKitEditorPlanetInstaller class
 ================
-2021-03-01 --> 2021-06-18
+2021-03-01 --> 2021-06-22
 
 
 

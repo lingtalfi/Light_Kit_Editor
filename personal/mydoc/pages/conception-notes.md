@@ -1,6 +1,6 @@
 Light_Kit_Editor, conception notes
 ================
-2021-03-01 -> 2021-04-08
+2021-03-01 -> 2021-06-22
 
 **Light kit editor** (lke)'s purpose is to help users edit their [kit](https://github.com/lingtalfi/Kit) pages using a gui.
 
@@ -522,7 +522,7 @@ Light kit editor uses the zone alias system instead of the template inheritance 
 
 Adding websites
 ==========
-2021-04-01
+2021-04-01 -> 2021-06-22
 
 
 
@@ -540,13 +540,14 @@ Example:
     provider: Ling.Light_Kit_Admin
     engine: babyYaml
     identifier: some_identifier
-    rootDir: ${app_dir}/config/open/Ling.Light_Kit_Admin/lke
+    rootDir: ${app_dir}/config/open/Ling.Light_Kit_Admin/Ling.Light_Kit_Editor/admin
     label: Website 1
 
 -
     provider: Ling.Light_Kit_Admin
     engine: db
     identifier: lke
+    rootDir: ${app_dir}/config/open/Ling.Light_Kit_Admin/Ling.Light_Kit_Editor/admin
     label: Website name
 
 ```
@@ -556,8 +557,15 @@ Each entry is an item representing a website, which has the following structure:
 - provider: string, the [dot name](https://github.com/karayabin/universe-snapshot#the-planet-dot-name) of the plugin providing the website
 - engine: string, which engine to use for this website (db or babyYaml)
 - identifier: string, a unique identifier for this website. This will be used as a reference internally
-- ?rootDir: string, only necessary for the babyYaml engine: the root dir of the website files. The ${app_dir} tag will be resolved
-    to the application root directory.
+- ?rootDir: string, the root dir of the website files.
+    It must start with The ${app_dir} tag, which will be either:
+    - resolved to the application root directory
+    - stripped out (internally) to get the relative path to the root dir
+    depending on the methods used.
+    
+    While this is mostly useful with the babyYaml engine type, the db engine also uses it if you use the **$root** alias in your layout path.
+    In that case, the **$root** alias is replaced with the value of this rootDir property.
+
 - label: string, the human label for the website, will be used in the gui
 - ?theme: string, the default theme to use for this website, see our [kit-theme](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/kit-theme.md) page for more info
 - ...: other properties might be added

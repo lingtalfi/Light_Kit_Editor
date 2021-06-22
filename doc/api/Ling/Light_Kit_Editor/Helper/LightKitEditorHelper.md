@@ -4,7 +4,7 @@
 
 The LightKitEditorHelper class
 ================
-2021-03-01 --> 2021-06-18
+2021-03-01 --> 2021-06-22
 
 
 
@@ -52,4 +52,4 @@ See the source code of [Ling\Light_Kit_Editor\Helper\LightKitEditorHelper](https
 
 SeeAlso
 ==============
-Previous class: [LightKitEditorException](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Exception/LightKitEditorException.md)<br>Next class: [WebsiteRootTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer.md)<br>
+Previous class: [LightKitEditorException](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Exception/LightKitEditorException.md)<br>Next class: [AppDirTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/AppDirTransformer.md)<br>

@@ -33,9 +33,13 @@ Available options are:
 - type: string=babyYaml. The type of storage to use. It can be one of the following:
      - babyYaml
      - db
+     Note: you can also provide your storage directly with the storage option.
 
-- theme: string, the theme name. If set, the ThemeTransformer will be added to the instance. See the source code for more info.
-- root: string, the relative path to the website root. If set, the WebsiteRootTransformer will be added to the instance. See the source code for more info.
+- theme: string=null, the theme name. If set, the ThemeTransformer will be added to the instance. See the source code for more info.
+- root: string=null, the relative path to the website root. If set, the WebsiteRootTransformer will be added to the instance. See the source code for more info.
+- storage: LightKitEditorStorageInterface=null, a LightKitEditorStorageInterface storage to use.
+         If not defined, a default storage will be used based on the given type.
+         If defined, this overrides the type option.
 
 
 
@@ -72,7 +76,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Helper/LightKitEditorHelper.php#L47-L93)
+See the source code for method [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Helper/LightKitEditorHelper.php#L52-L106)
 
 
 See Also

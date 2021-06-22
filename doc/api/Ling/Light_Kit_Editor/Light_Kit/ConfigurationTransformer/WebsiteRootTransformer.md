@@ -4,7 +4,7 @@
 
 The WebsiteRootTransformer class
 ================
-2021-03-01 --> 2021-06-18
+2021-03-01 --> 2021-06-22
 
 
 
@@ -68,4 +68,4 @@ See the source code of [Ling\Light_Kit_Editor\Light_Kit\ConfigurationTransformer
 
 SeeAlso
 ==============
-Previous class: [LightKitEditorHelper](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Helper/LightKitEditorHelper.md)<br>Next class: [LightKitEditorPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer.md)<br>
+Previous class: [AppDirTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/AppDirTransformer.md)<br>Next class: [LightKitEditorPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer.md)<br>

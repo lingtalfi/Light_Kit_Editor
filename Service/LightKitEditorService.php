@@ -8,10 +8,9 @@ use Ling\BabyYaml\BabyYamlUtil;
 use Ling\Light\Http\HttpResponse;
 use Ling\Light\Http\HttpResponseInterface;
 use Ling\Light\ServiceContainer\LightServiceContainerInterface;
-use Ling\Light_Kit\ConfigurationTransformer\ThemeTransformer;
-use Ling\Light_Kit\Service\LightKitService;
 use Ling\Light_Kit_Editor\Api\Custom\CustomLightKitEditorApiFactory;
 use Ling\Light_Kit_Editor\Exception\LightKitEditorException;
+use Ling\Light_Kit_Editor\Helper\LightKitEditorHelper;
 use Ling\Light_Kit_Editor\Storage\LkeMultiStorageApi;
 
 
@@ -145,7 +144,16 @@ class LightKitEditorService
     public function renderPage(string $websiteId, string $pageId): HttpResponseInterface
     {
 
+
         $website = $this->getWebsiteByIdentifier($websiteId);
+
+
+        /**
+         * Here we want to allow the user to change the theme on a page basis,
+         * hence we don't directly call the basic page renderer, but rather
+         * access the page ourselves to see if there is a theme override...
+         *
+         */
         $engine = $website['engine'];
         $storage = $this->getMultiStorageApi();
         switch ($engine) {
@@ -161,36 +169,35 @@ class LightKitEditorService
                 break;
         }
 
-        $page = $storage->getPageConf($pageId);
-
-
-        /**
-         * @var $kit LightKitService
-         */
-        $kit = $this->container->get("kit");
-
-
-        $pageVars = $page['vars'] ?? [];
-        $theme = $pageVars['theme'] ?? null;
-
-        if ('$t' === $theme) {
-            if (true === array_key_exists("theme", $website)) {
-                $theme = $website['theme'];
-            }
+        $page = $storage->getPageConf($pageId); // sneak peak to the page conf
+        if (false === $page) {
+            return new HttpResponse("Page not found", 404);
         }
 
 
-        $page['layout'] = str_replace('$t', $theme, $page['layout']);
+        $pageVars = $page['vars'] ?? [];
+        $theme = $website["theme"] ?? null;
+        $root = $website["rootDir"] ?? null;
+        if (null === $theme) {
+            $theme = $pageVars['theme'] ?? null;
+        }
 
-        $themeTransformer = new ThemeTransformer();
-        $themeTransformer->setTheme($theme);
-        $kit->addPageConfigurationTransformer($themeTransformer);
+        if (true === is_string($root)) {
+            $root = str_replace('${app_dir}/', '', $root);
+        }
+
+        /**
+         * ... then we use the basic page renderer...
+         */
+        $pageRenderer = LightKitEditorHelper::getBasicPageRenderer($this->container, [
+            'type' => $engine,
+            'theme' => $theme,
+            'root' => $root,
+            'storage' => $storage,
+        ]);
 
 
-//az($page);
-
-
-        return new HttpResponse($kit->renderPage($pageId, [
+        return new HttpResponse($pageRenderer->renderPage($pageId, [
             'pageConf' => $page,
         ]));
 
