@@ -1,6 +1,6 @@
 Light_Kit_Editor
 ===========
-2021-03-08 -> 2021-06-22
+2021-03-08 -> 2021-08-03
 
 
 
@@ -68,6 +68,17 @@ kit_editor:
 
 History Log
 =============
+
+- 0.3.0 -- 2021-08-03
+
+    - update babyYaml storage, now add _babyYamlPage info 
+    - add LightKitEditorPageRenderer class
+    - simplified theme concepts
+    - update easy route namespace (add galaxy prefix)
+  
+- 0.2.10 -- 2021-06-25
+
+    - updated routes, add galaxy prefix
 
 - 0.2.9 -- 2021-06-22
 

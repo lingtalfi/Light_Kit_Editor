@@ -1,6 +1,6 @@
 Light_Kit_Editor, conception notes
 ================
-2021-03-01 -> 2021-06-22
+2021-03-01 -> 2021-07-01
 
 **Light kit editor** (lke)'s purpose is to help users edit their [kit](https://github.com/lingtalfi/Kit) pages using a gui.
 
@@ -17,7 +17,7 @@ This is the concept of [kit web app](#the-kit-web-app), which basically introduc
 
 Summary
 ------------
-2021-03-12 -> 2021-04-08
+2021-03-12 -> 2021-07-01
 
 * [The kit web app](#the-kit-web-app)
 * [The two engines](#the-two-engines)
@@ -27,7 +27,7 @@ Summary
     * [Block alias](#block-alias)
   * [database storage](#database-storage)
   * [Zone alias conception](#zone-alias-conception)
-* [Adding websites](#adding-websites)
+* [Website items](#website-items)
 * [The website controller](#the-website-controller)
 * [The kit editor page renderer](#the-kit-editor-page-renderer)
   
@@ -520,13 +520,13 @@ Light kit editor uses the zone alias system instead of the template inheritance 
 
 
 
-Adding websites
+Website items
 ==========
-2021-04-01 -> 2021-06-22
+2021-04-01 -> 2021-07-01
 
 
 
-Third party authors can add their own websites via our [open registration system](https://github.com/lingtalfi/Light/blob/master/personal/mydoc/pages/design/open-vs-close-service-registration.md#the-open-registration).
+Third party authors create their own websites via our [open registration system](https://github.com/lingtalfi/Light/blob/master/personal/mydoc/pages/design/open-vs-close-service-registration.md#the-open-registration).
 
 We provide the following file:
 
@@ -542,6 +542,7 @@ Example:
     identifier: some_identifier
     rootDir: ${app_dir}/config/open/Ling.Light_Kit_Admin/Ling.Light_Kit_Editor/admin
     label: Website 1
+    theme: Ling.Light_Kit_Admin/zeroadmin
 
 -
     provider: Ling.Light_Kit_Admin
@@ -549,6 +550,7 @@ Example:
     identifier: lke
     rootDir: ${app_dir}/config/open/Ling.Light_Kit_Admin/Ling.Light_Kit_Editor/admin
     label: Website name
+    theme: Ling.Light_Kit_Admin/zeroadmin
 
 ```
 
@@ -567,7 +569,8 @@ Each entry is an item representing a website, which has the following structure:
     In that case, the **$root** alias is replaced with the value of this rootDir property.
 
 - label: string, the human label for the website, will be used in the gui
-- ?theme: string, the default theme to use for this website, see our [kit-theme](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/kit-theme.md) page for more info
+- ?theme: string="default", the default theme to use for this website, see our [kit-theme](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/pages/kit-theme.md) page for more info.
+  
 - ...: other properties might be added
 
 

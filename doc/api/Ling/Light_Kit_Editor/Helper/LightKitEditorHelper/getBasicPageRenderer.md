@@ -76,7 +76,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Helper/LightKitEditorHelper.php#L52-L106)
+See the source code for method [LightKitEditorHelper::getBasicPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/Helper/LightKitEditorHelper.php#L53-L106)
 
 
 See Also

@@ -11,6 +11,7 @@ use Ling\Light_Kit_Editor\Engine\LightKitEditorEngine;
 use Ling\Light_Kit_Editor\Exception\LightKitEditorException;
 use Ling\Light_Kit_Editor\Light_Kit\ConfigurationTransformer\AppDirTransformer;
 use Ling\Light_Kit_Editor\Light_Kit\ConfigurationTransformer\WebsiteRootTransformer;
+use Ling\Light_Kit_Editor\Light_Kit\PageRenderer\LightKitEditorPageRenderer;
 use Ling\Light_Kit_Editor\Storage\LightKitEditorBabyYamlStorage;
 use Ling\Light_Kit_Editor\Storage\LightKitEditorDatabaseStorage;
 
@@ -57,7 +58,6 @@ class LightKitEditorHelper
          */
         $_kit = $container->get("kit");
         $pageRenderer = clone($_kit);
-
 
         $appDir = $container->getApplicationDir();
 

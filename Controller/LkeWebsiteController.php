@@ -30,7 +30,6 @@ class LkeWebsiteController extends LightController
     public function render(HttpRequestInterface $request): HttpResponseInterface
     {
 
-
         $websiteId = $request->getGetValue("website_id", false);
         if (null === $websiteId) {
             /**

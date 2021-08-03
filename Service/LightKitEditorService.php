@@ -43,6 +43,17 @@ class LightKitEditorService
 
 
     /**
+     * The theme actually used when rendering a page.
+     * This is only set when you call our renderPage method.
+     * Otherwise, it's null.
+     *
+     *
+     * @var string | null
+     */
+    private ?string $theme;
+
+
+    /**
      * Builds the LightKitEditorService instance.
      */
     public function __construct()
@@ -50,6 +61,7 @@ class LightKitEditorService
         $this->container = null;
         $this->factory = null;
         $this->defaultWebsiteIdentifier = "default";
+        $this->theme = null;
     }
 
     /**
@@ -82,6 +94,21 @@ class LightKitEditorService
         return $this->defaultWebsiteIdentifier;
     }
 
+
+    /**
+     * Returns the theme actually used while rendering the page.
+     *
+     * The theme is only available when you call the renderPage method of this class.
+     *
+     * This method is designed to be called from templates.
+     *
+     *
+     * @return string|null
+     */
+    public function getTheme(): string|null
+    {
+        return $this->theme;
+    }
 
 
 
@@ -137,12 +164,24 @@ class LightKitEditorService
     /**
      * Renders the page identified by the given arguments.
      *
+     *
+     * The pageOptions are forwarded to the (kit_page_renderer)->renderPage method.
+     *
+     * Available options are:
+     * - before: callback to trigger before the page is rendered
+     *
+     *
      * @param string $websiteId
      * @param string $pageId
+     * @param array $pageOptions
+     * @param array $options
      * @return HttpResponseInterface
      */
-    public function renderPage(string $websiteId, string $pageId): HttpResponseInterface
+    public function renderPage(string $websiteId, string $pageId, array $pageOptions = [], array $options = []): HttpResponseInterface
     {
+
+
+        $before = $options['before'] ?? null;
 
 
         $website = $this->getWebsiteByIdentifier($websiteId);
@@ -176,11 +215,12 @@ class LightKitEditorService
 
 
         $pageVars = $page['vars'] ?? [];
-        $theme = $website["theme"] ?? null;
+        $theme = $pageVars['theme'] ?? null;
         $root = $website["rootDir"] ?? null;
-        if (null === $theme) {
-            $theme = $pageVars['theme'] ?? null;
+        if (null === $theme || '$t' === $theme) {
+            $theme = $website["theme"] ?? null;
         }
+        $this->theme = $theme;
 
         if (true === is_string($root)) {
             $root = str_replace('${app_dir}/', '', $root);
@@ -197,9 +237,17 @@ class LightKitEditorService
         ]);
 
 
-        return new HttpResponse($pageRenderer->renderPage($pageId, [
-            'pageConf' => $page,
-        ]));
+        if (true === is_callable($before)) {
+            $before();
+        }
+
+
+        return new HttpResponse($pageRenderer->renderPage($pageId, $pageOptions));
+
+
+//        return new HttpResponse($pageRenderer->renderPage($pageId, [
+//            'pageConf' => $page,
+//        ]));
 
     }
 

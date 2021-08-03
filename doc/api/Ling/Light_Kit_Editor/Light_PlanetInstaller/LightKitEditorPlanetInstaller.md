@@ -4,7 +4,7 @@
 
 The LightKitEditorPlanetInstaller class
 ================
-2021-03-01 --> 2021-06-22
+2021-03-01 --> 2021-08-03
 
 
 
@@ -63,4 +63,4 @@ See the source code of [Ling\Light_Kit_Editor\Light_PlanetInstaller\LightKitEdit
 
 SeeAlso
 ==============
-Previous class: [LightKitEditorPageRenderer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/Page_Renderer/LightKitEditorPageRenderer.md)<br>Next class: [LightKitEditorRealformSuccessHandler](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Realform/SuccessHandler/LightKitEditorRealformSuccessHandler.md)<br>
+Previous class: [WebsiteRootTransformer](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Kit/ConfigurationTransformer/WebsiteRootTransformer.md)<br>Next class: [LightKitEditorRealformSuccessHandler](https://github.com/lingtalfi/Light_Kit_Editor/blob/master/doc/api/Ling/Light_Kit_Editor/Light_Realform/SuccessHandler/LightKitEditorRealformSuccessHandler.md)<br>
